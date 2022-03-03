@@ -19,7 +19,9 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 
 
 ### move()
+* **Description:** This method uses the get_valid_moves method to find the possible locations that PacMan can move, given his current location. The method then chooses to move in one of those directions.
 
+* **TestPacManMove:**
 
 
 
@@ -44,7 +46,9 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 
 
 ### move()
+* **Description:** This function uses the get_valid_moves function to find the possible locations that a ghost can move to from its current location and chooses to move in one of those directions. 
 
+* **TestGhostMove:**
 
 
 
@@ -66,7 +70,9 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 
 
 ### getLoc(Location loc)
+* **Description:** This functions checks what is at the current location, loc. It returns Empty, Pacman, Cookie, Ghost, or Wall.
 
+* **TestMapGetLoc:**
 
 ### attack(String name)
 
