@@ -9,17 +9,17 @@ public class Map{
 		PACMAN,
 		GHOST,
 		WALL,
-		COOKIE		
+		COOKIE
 	}
-	
+
 	private HashMap<Location, HashSet<Type>> field;
 	private boolean gameOver;
 	private int dim;
 
 	private HashMap<String, Location> locations;
-	private HashMap<String, JComponent> components; 
+	private HashMap<String, JComponent> components;
 	private HashSet<Type> emptySet;
-	private HashSet<Type> wallSet; 
+	private HashSet<Type> wallSet;
 
 	private int cookies = 0;
 
@@ -47,27 +47,61 @@ public class Map{
 	public int getCookies() {
 		return cookies;
 	}
-	
+
 	public boolean isGameOver() {
 		return gameOver;
 	}
-		
+
 	public boolean move(String name, Location loc, Type type) {
 		//update locations, components, and field
 		//use the setLocation method for the component to move it to the new location
 		return false;
 	}
-	
+
 	public HashSet<Type> getLoc(Location loc) {
 		//wallSet and emptySet will help you write this method
-		return null;
+		return field.get(loc);
 	}
 
 	public boolean attack(String Name) {
-		//update gameOver
-		return false;
+		boolean successfulAttack = false;
+
+		if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x + 1, locations.get("pacman").y))) {
+			successfulAttack = true;
+		}
+
+		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x - 1, locations.get("pacman").y))) {
+			successfulAttack = true;
+		}
+
+		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x, locations.get("pacman").y + 1))) {
+			successfulAttack = true;
+		}
+
+		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x, locations.get("pacman").y - 1))) {
+			successfulAttack = true;
+		}
+
+		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x + 1, locations.get("pacman").y + 1))) {
+			successfulAttack = true;
+		}
+
+		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x - 1, locations.get("pacman").y - 1))) {
+			successfulAttack = true;
+		}
+
+		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x + 1, locations.get("pacman").y - 1))) {
+			successfulAttack = true;
+		}
+
+		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x - 1, locations.get("pacman").y + 1))) {
+			successfulAttack = true;
+		}
+
+		gameOver = true;
+		return successfulAttack;
 	}
-	
+
 	public JComponent eatCookie(String name) {
 		//update locations, components, field, and cookies
 		//the id for a cookie at (10, 1) is tok_x10_y1

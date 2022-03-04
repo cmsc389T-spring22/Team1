@@ -61,7 +61,7 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 
 * **Description:** This function checks whether the pacman is in range of attack by calling is_pacman_in_range function. If the pacman is attacked it will return true else it will return false.
 
-* **TestAttack:** 
+* **TestAttack:**
 
 
 ## Map class
@@ -76,6 +76,9 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 
 ### attack(String name)
 
+* **Description:** The method controls ghosts attacking pacman. If the ghost was able to successfully attack pacman and update the display to do so return true, otherwise return false.
+
+* **TestMapAttack:** This method creates PacMan and a Ghost next to each other, and ensures that an attack from that position would be successful.
 
 ### eatCookie(String Name)
 
@@ -83,7 +86,3 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 
 
 * **TestMapEatCookie:**
-
-
-
-
