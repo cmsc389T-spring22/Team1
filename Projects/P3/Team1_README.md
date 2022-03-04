@@ -46,20 +46,24 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 
 
 ### move()
+
 * **Description:** This function uses the get_valid_moves function to find the possible locations that a ghost can move to from its current location and chooses to move in one of those directions. It will return true if the move was successful, false otherwise.
 
 * **TestGhostMove:** This method creates one ghost in a NoFrame at 9,12 and checks whether the ghost can move, expecting it to be true.
 
 
-
 ### is_pacman_in_range()
 
+* **Description:** This method checks its surroundings to see if any Ghosts are in attack range. The attack radius of a ghost is 1 which means that a ghost at location (x, y) can attack PacMan as long as PacMan is located at (x +/- 1, y +/- 1). If any Ghosts are in the attack range, this method returns true otherwise it returns false.
+
+* **TestPacManInRange:** This method creates one PacMan and one Ghost right next to it, and if the method finds PacMan correctly it returns true, otherwise false.
 
 
 
 ### attack()
 
 * **Description:** This function checks whether the pacman is in range of attack by calling is_pacman_in_range function. If the pacman is attacked it will return true else it will return false.
+
 
 * **TestAttack:** This test checks whether the pacman is in the range of the ghost and was attacked or not.
 
@@ -81,9 +85,4 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 
 * **Description:** This functions checks whether the function was able to update the display to eat a cookie. if is was successful then it returns the cookie component else it will just return null.
 
-
 * **TestMapEatCookie:** This test checks that as there is no cookie at pacman's location(4,6) fo the funtion should return null.
-
-
-
-
