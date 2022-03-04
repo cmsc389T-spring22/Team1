@@ -49,7 +49,7 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 * **Description:** This function uses the get_valid_moves function to find the possible locations that a ghost can move to from its current location and chooses to move in one of those directions. It will return true if the move was successful, false otherwise.
 
 * **TestGhostMove:**
-
+* **Description:** This method creates one ghost in NoFrame and tests whether the ghost can move, expecting it to be true.  
 
 
 ### is_pacman_in_range()
