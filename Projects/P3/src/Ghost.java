@@ -19,16 +19,16 @@ public class Ghost{
 		Location up = new Location(myLoc.x, myLoc.y - 1);
 		Location down = new Location(myLoc.x, myLoc.y + 1);
 
-		if(myMap.getLoc(right) == Type.EMPTY) {
+		if(myMap.getLoc(right) == Type.EMPTY || myMap.getLoc(right) == Type.COOKIE) {
 			returner.add(right);
 		}
-		if(myMap.getLoc(left) == Type.EMPTY) {
+		if(myMap.getLoc(left) == Type.EMPTY || myMap.getLoc(left) == Type.COOKIE) {
 			returner.add(left);
 		}
-		if(myMap.getLoc(up) == Type.EMPTY) {
+		if(myMap.getLoc(up) == Type.EMPTY || myMap.getLoc(up) == Type.COOKIE) {
 			returner.add(up);
 		}
-		if(myMap.getLoc(down) == Type.EMPTY) {
+		if(myMap.getLoc(down) == Type.EMPTY || myMap.getLoc(down) == Type.COOKIE) {
 			returner.add(down);
 		}
 		return returner;
