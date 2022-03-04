@@ -23,9 +23,43 @@ public class PacMan{
 	}
 
 	public boolean is_ghost_in_range() {
-		return false;
-	}
+		boolean foundGhost = false;
 
+		if (myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)).contains(Map.Type.GHOST)) {
+			foundGhost = true;
+		}
+
+		else if (myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)).contains(Map.Type.GHOST)) {
+			foundGhost = true;
+		}
+
+		else if (myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)).contains(Map.Type.GHOST)) {
+			foundGhost = true;
+		}
+
+		else if (myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)).contains(Map.Type.GHOST)) {
+			foundGhost = true;
+		}
+
+		else if (myMap.getLoc(new Location(myLoc.x + 1, myLoc.y + 1)).contains(Map.Type.GHOST)) {
+			foundGhost = true;
+		}
+
+		else if (myMap.getLoc(new Location(myLoc.x - 1, myLoc.y - 1)).contains(Map.Type.GHOST)) {
+			foundGhost = true;
+		}
+
+		else if (myMap.getLoc(new Location(myLoc.x + 1, myLoc.y - 1)).contains(Map.Type.GHOST)) {
+			foundGhost = true;
+		}
+
+		else if (myMap.getLoc(new Location(myLoc.x - 1, myLoc.y + 1)).contains(Map.Type.GHOST)) {
+			foundGhost = true;
+		}
+
+		return foundGhost;
+	}
+  
 	public JComponent consume() {
  		if(myMap.getLoc(myLoc).contains(Map.Type.COOKIE)) {
 			return myMap.eatCookie(myName);
