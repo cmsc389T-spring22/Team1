@@ -22,16 +22,16 @@ public class PacMan{
 		Location up = new Location(myLoc.x, myLoc.y - 1);
 		Location down = new Location(myLoc.x, myLoc.y + 1);
 
-		if(myMap.getLoc(right) == Type.EMPTY) {
+		if(myMap.getLoc(right).contains(Map.Type.EMPTY) || myMap.getLoc(right).contains(Map.Type.COOKIE)) {
 			returner.add(right);
 		}
-		if(myMap.getLoc(left) == Type.EMPTY) {
+		if(myMap.getLoc(left).contains(Map.Type.EMPTY) || myMap.getLoc(left).contains(Map.Type.COOKIE)) {
 			returner.add(left);
 		}
-		if(myMap.getLoc(up) == Type.EMPTY) {
+		if(myMap.getLoc(up).contains(Map.Type.EMPTY) ||myMap.getLoc(up).contains(Map.Type.COOKIE)) {
 			returner.add(up);
 		}
-		if(myMap.getLoc(down) == Type.EMPTY) {
+		if(myMap.getLoc(down).contains(Map.Type.EMPTY) ||myMap.getLoc(down).contains(Map.Type.COOKIE)) {
 			returner.add(down);
 		}
 		return returner;
