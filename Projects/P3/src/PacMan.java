@@ -6,7 +6,7 @@ public class PacMan{
 	String myName;
 	Location myLoc;
 	Map myMap;
-	Location shift; 
+	Location shift;
 
 	public PacMan(String name, Location loc, Map map) {
 		this.myLoc = loc;
@@ -15,18 +15,52 @@ public class PacMan{
 	}
 
 	public ArrayList<Location> get_valid_moves() {
-		return null;	
+		return null;
 	}
 
 	public boolean move() {
 		return false;
 	}
 
-	public boolean is_ghost_in_range() { 
-		return false;
+	public boolean is_ghost_in_range() {
+		boolean foundGhost = false;
+
+		if (myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)) != null && myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)).contains(Map.Type.GHOST)) {
+			foundGhost = true;
+		}
+
+		else if (myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)) != null && myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)).contains(Map.Type.GHOST)) {
+			foundGhost = true;
+		}
+
+		else if (myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)) != null && myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)).contains(Map.Type.GHOST)) {
+			foundGhost = true;
+		}
+
+		else if (myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)) != null && myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)).contains(Map.Type.GHOST)) {
+			foundGhost = true;
+		}
+
+		else if (myMap.getLoc(new Location(myLoc.x + 1, myLoc.y + 1)) != null && myMap.getLoc(new Location(myLoc.x + 1, myLoc.y + 1)).contains(Map.Type.GHOST)) {
+			foundGhost = true;
+		}
+
+		else if (myMap.getLoc(new Location(myLoc.x - 1, myLoc.y - 1)) != null && myMap.getLoc(new Location(myLoc.x - 1, myLoc.y - 1)).contains(Map.Type.GHOST)) {
+			foundGhost = true;
+		}
+
+		else if (myMap.getLoc(new Location(myLoc.x + 1, myLoc.y - 1)) != null && myMap.getLoc(new Location(myLoc.x + 1, myLoc.y - 1)).contains(Map.Type.GHOST)) {
+			foundGhost = true;
+		}
+
+		else if (myMap.getLoc(new Location(myLoc.x - 1, myLoc.y + 1)) != null && myMap.getLoc(new Location(myLoc.x - 1, myLoc.y + 1)).contains(Map.Type.GHOST)) {
+			foundGhost = true;
+		}
+
+		return foundGhost;
 	}
 
-	public JComponent consume() { 
+	public JComponent consume() {
  		return null;
 	}
 }
