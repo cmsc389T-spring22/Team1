@@ -19,12 +19,18 @@ public class PacMan{
 	}
 
 	public boolean move() {
+		ArrayList<Location> possibleLocations = get_valid_moves();
+		if (possibleLocations.size() != 0) {
+			myLoc = new Location(possibleLocations.get(0).x, possibleLocations.get(0).y);
+			myMap.move("pacman", new Location(myLoc.x, myLoc.y), Map.Type.PACMAN);
+			return true;
+		}
 		return false;
 	}
 
 	public boolean is_ghost_in_range() {
 		boolean foundGhost = false;
-
+    
 		if (myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)) != null && myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)).contains(Map.Type.GHOST)) {
 			foundGhost = true;
 		}
@@ -59,8 +65,12 @@ public class PacMan{
 
 		return foundGhost;
 	}
-
+  
 	public JComponent consume() {
- 		return null;
+ 		if(myMap.getLoc(myLoc).contains(Map.Type.COOKIE)) {
+			return myMap.eatCookie(myName);
+		} else {
+			return null;
+		}
 	}
 }
