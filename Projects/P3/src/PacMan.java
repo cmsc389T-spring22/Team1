@@ -15,7 +15,27 @@ public class PacMan{
 	}
 
 	public ArrayList<Location> get_valid_moves() {
-		return null;
+
+		ArrayList<Location> returner = new ArrayList<>();
+		Location right = new Location(myLoc.x + 1, myLoc.y);
+		Location left = new Location(myLoc.x - 1, myLoc.y);
+		Location up = new Location(myLoc.x, myLoc.y - 1);
+		Location down = new Location(myLoc.x, myLoc.y + 1);
+
+		if(myMap.getLoc(right) == Type.EMPTY) {
+			returner.add(right);
+		}
+		if(myMap.getLoc(left) == Type.EMPTY) {
+			returner.add(left);
+		}
+		if(myMap.getLoc(up) == Type.EMPTY) {
+			returner.add(up);
+		}
+		if(myMap.getLoc(down) == Type.EMPTY) {
+			returner.add(down);
+		}
+		return returner;
+
 	}
 
 	public boolean move() {
