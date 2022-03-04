@@ -21,7 +21,7 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 ### move()
 * **Description:** This method uses the get_valid_moves method to find the possible locations that PacMan can move, given his current location. The method then chooses to move in one of those directions. It will return true if the move was successful, false otherwise.
 
-* **TestPacManMove:**
+* **TestPacManMove:** This method adds pacman and surrounds it with ghosts, expecting move() to return false. The method also adds pacman to a NoFrame, surrounded by nothing expecting it to return true
 
 
 
@@ -48,7 +48,7 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 ### move()
 * **Description:** This function uses the get_valid_moves function to find the possible locations that a ghost can move to from its current location and chooses to move in one of those directions. It will return true if the move was successful, false otherwise.
 
-* **TestGhostMove:**
+* **TestGhostMove:** This method creates one ghost in a NoFrame at 9,12 and checks whether the ghost can move, expecting it to be true.
 
 
 
@@ -61,7 +61,7 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 
 * **Description:** This function checks whether the pacman is in range of attack by calling is_pacman_in_range function. If the pacman is attacked it will return true else it will return false.
 
-* **TestAttack:**
+* **TestAttack:** This test checks whether the pacman is in the range of the ghost and was attacked or not.
 
 
 ## Map class
@@ -72,7 +72,7 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 ### getLoc(Location loc)
 * **Description:** This functions checks what is at the current location, loc. It returns Empty, Pacman, Cookie, Ghost, or Wall.
 
-* **TestMapGetLoc:**
+* **TestMapGetLoc:** This method adds a Pacman at location 9,11 and uses getLoc(9,11) to check whether Pacman is returned. 
 
 ### attack(String name)
 
@@ -84,5 +84,4 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 
 * **Description:** This functions checks whether the function was able to update the display to eat a cookie. if is was successful then it returns the cookie component else it will just return null.
 
-
-* **TestMapEatCookie:**
+* **TestMapEatCookie:** This test checks that as there is no cookie at pacman's location(4,6) fo the funtion should return null.
