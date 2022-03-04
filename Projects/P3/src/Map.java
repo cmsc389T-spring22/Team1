@@ -9,17 +9,17 @@ public class Map{
 		PACMAN,
 		GHOST,
 		WALL,
-		COOKIE		
+		COOKIE
 	}
-	
+
 	private HashMap<Location, HashSet<Type>> field;
 	private boolean gameOver;
 	private int dim;
 
 	private HashMap<String, Location> locations;
-	private HashMap<String, JComponent> components; 
+	private HashMap<String, JComponent> components;
 	private HashSet<Type> emptySet;
-	private HashSet<Type> wallSet; 
+	private HashSet<Type> wallSet;
 
 	private int cookies = 0;
 
@@ -47,17 +47,17 @@ public class Map{
 	public int getCookies() {
 		return cookies;
 	}
-	
+
 	public boolean isGameOver() {
 		return gameOver;
 	}
-		
+
 	public boolean move(String name, Location loc, Type type) {
 		//update locations, components, and field
 		//use the setLocation method for the component to move it to the new location
 		return false;
 	}
-	
+
 	public HashSet<Type> getLoc(Location loc) {
 		return field.get(loc);
 	}
@@ -66,10 +66,21 @@ public class Map{
 		//update gameOver
 		return false;
 	}
-	
+
 	public JComponent eatCookie(String name) {
 		//update locations, components, field, and cookies
 		//the id for a cookie at (10, 1) is tok_x10_y1
-		return null;
+		
+		if(locations.containsKey(name)) {
+			Location loc = locations.get(name);
+			String tokid = "tok_x" + loc.x + "_y" + loc.y;
+
+			field.get(loc).remove(Type.COOKIE);
+			locations.remove(tokid);
+			cookies++;
+			return components.remove(tokid);
+		} else {
+			return null;
+		}
 	}
 }
