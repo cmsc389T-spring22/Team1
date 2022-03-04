@@ -64,7 +64,8 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 
 * **Description:** This function checks whether the pacman is in range of attack by calling is_pacman_in_range function. If the pacman is attacked it will return true else it will return false.
 
-* **TestAttack:**
+
+* **TestAttack:** This test checks whether the pacman is in the range of the ghost and was attacked or not.
 
 
 ## Map class
@@ -84,5 +85,4 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 
 * **Description:** This functions checks whether the function was able to update the display to eat a cookie. if is was successful then it returns the cookie component else it will just return null.
 
-
-* **TestMapEatCookie:**
+* **TestMapEatCookie:** This test checks that as there is no cookie at pacman's location(4,6) fo the funtion should return null.
