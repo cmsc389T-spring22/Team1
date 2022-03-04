@@ -13,7 +13,7 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 ## PacMan class
 
 ### get_valid_moves()
-
+* **Description:** This method will utilize the current location and view around the Pacman. It will return all of the locations that contain a cookie or are empty. 
 
 
 
@@ -42,7 +42,7 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 ## Ghost class
 
 ### get_valid_moves()
-
+* **Description:** This method will utilize the current location and view around the Ghost. It will return all of the locations that contain a cookie or are empty. 
 
 
 ### move()
@@ -71,7 +71,7 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 ## Map class
 
 ### move(String name, Location loc, Type type)
-
+* **Description:** This method will update the Map and actually move the object associated with the name, location, and type to the new location. It will return true if the move worked successfully, and false otherwise.
 
 ### getLoc(Location loc)
 * **Description:** This functions checks what is at the current location, loc. It returns Empty, Pacman, Cookie, Ghost, or Wall.
@@ -80,6 +80,9 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 
 ### attack(String name)
 
+* **Description:** The method controls ghosts attacking pacman. If the ghost was able to successfully attack pacman and update the display to do so return true, otherwise return false.
+
+* **TestMapAttack:** This method creates PacMan and a Ghost next to each other, and ensures that an attack from that position would be successful.
 
 ### eatCookie(String Name)
 
