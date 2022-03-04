@@ -13,63 +13,36 @@ public class Ghost{
 	}
 
 	public ArrayList<Location> get_valid_moves() {
-		return null;
+		ArrayList<Location> returner = new ArrayList<>();
+		Location right = new Location(myLoc.x + 1, myLoc.y);
+		Location left = new Location(myLoc.x - 1, myLoc.y);
+		Location up = new Location(myLoc.x, myLoc.y - 1);
+		Location down = new Location(myLoc.x, myLoc.y + 1);
+
+		if(myMap.getLoc(right) == Type.EMPTY) {
+			returner.add(right);
+		}
+		if(myMap.getLoc(left) == Type.EMPTY) {
+			returner.add(left);
+		}
+		if(myMap.getLoc(up) == Type.EMPTY) {
+			returner.add(up);
+		}
+		if(myMap.getLoc(down) == Type.EMPTY) {
+			returner.add(down);
+		}
+		return returner;
 	}
 
 	public boolean move() {
-		ArrayList<Location> possibleLocations = get_valid_moves();
-		if (possibleLocations.size() != 0) {
-			myLoc = new Location(possibleLocations.get(0).x, possibleLocations.get(0).y);
-			myMap.move(myName, new Location(myLoc.x, myLoc.y), Map.Type.GHOST);
-			return true;
-		}
 		return false;
 	}
 
-	public boolean is_pacman_in_range() {
-		boolean foundPacMan = false;
-
-		if (myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)) != null && myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)).contains(Map.Type.PACMAN)) {
-			foundPacMan = true;
-		}
-
-		else if (myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)) != null && myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)).contains(Map.Type.PACMAN)) {
-			foundPacMan = true;
-		}
-
-		else if (myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)) != null && myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)).contains(Map.Type.PACMAN)) {
-			foundPacMan = true;
-		}
-
-		else if (myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)) != null && myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)).contains(Map.Type.PACMAN)) {
-			foundPacMan = true;
-		}
-
-		else if (myMap.getLoc(new Location(myLoc.x + 1, myLoc.y + 1)) != null && myMap.getLoc(new Location(myLoc.x + 1, myLoc.y + 1)).contains(Map.Type.PACMAN)) {
-			foundPacMan = true;
-		}
-
-		else if (myMap.getLoc(new Location(myLoc.x - 1, myLoc.y - 1)) != null && myMap.getLoc(new Location(myLoc.x - 1, myLoc.y - 1)).contains(Map.Type.PACMAN)) {
-			foundPacMan = true;
-		}
-
-		else if (myMap.getLoc(new Location(myLoc.x + 1, myLoc.y - 1)) != null && myMap.getLoc(new Location(myLoc.x + 1, myLoc.y - 1)).contains(Map.Type.PACMAN)) {
-			foundPacMan = true;
-		}
-
-		else if (myMap.getLoc(new Location(myLoc.x - 1, myLoc.y + 1)) != null && myMap.getLoc(new Location(myLoc.x - 1, myLoc.y + 1)).contains(Map.Type.PACMAN)) {
-			foundPacMan = true;
-		}
-
-		return foundPacMan;
+	public boolean is_pacman_in_range() { 
+		return false;
 	}
 
 	public boolean attack() {
-		if(is_pacman_in_range()) {
-			return myMap.attack(myName)
-		} else {
-			return false;
-		}
-
+		return false;
 	}
 }
