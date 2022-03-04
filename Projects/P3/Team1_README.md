@@ -27,7 +27,9 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 
 ### is_ghost_in_range()
 
+* **Description:** This method checks its surroundings to see if any Ghosts are in attack range. The attack radius of a ghost is 1 which means that a ghost at location (x, y) can attack PacMan as long as PacMan is located at (x +/- 1, y +/- 1). If any Ghosts are in the attack range, this method returns true otherwise it returns false.
 
+* **TestGhostInRange:** This method creates one PacMan and one Ghost right next to it, and if the method finds the Ghost correctly it returns true, otherwise false.
 
 
 ### consume()
