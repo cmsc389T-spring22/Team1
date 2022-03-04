@@ -59,12 +59,47 @@ public class Map{
 	}
 
 	public HashSet<Type> getLoc(Location loc) {
+		//wallSet and emptySet will help you write this method
 		return field.get(loc);
 	}
 
 	public boolean attack(String Name) {
-		//update gameOver
-		return false;
+		boolean successfulAttack = false;
+
+		if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x + 1, locations.get("pacman").y))) {
+			successfulAttack = true;
+		}
+
+		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x - 1, locations.get("pacman").y))) {
+			successfulAttack = true;
+		}
+
+		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x, locations.get("pacman").y + 1))) {
+			successfulAttack = true;
+		}
+
+		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x, locations.get("pacman").y - 1))) {
+			successfulAttack = true;
+		}
+
+		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x + 1, locations.get("pacman").y + 1))) {
+			successfulAttack = true;
+		}
+
+		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x - 1, locations.get("pacman").y - 1))) {
+			successfulAttack = true;
+		}
+
+		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x + 1, locations.get("pacman").y - 1))) {
+			successfulAttack = true;
+		}
+
+		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x - 1, locations.get("pacman").y + 1))) {
+			successfulAttack = true;
+		}
+
+		gameOver = true;
+		return successfulAttack;
 	}
 
 	public JComponent eatCookie(String name) {
