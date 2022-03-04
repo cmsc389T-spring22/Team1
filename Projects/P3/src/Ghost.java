@@ -17,6 +17,12 @@ public class Ghost{
 	}
 
 	public boolean move() {
+		ArrayList<Location> possibleLocations = get_valid_moves();
+		if (possibleLocations.size() != 0) {
+			myLoc = new Location(possibleLocations.get(0).x, possibleLocations.get(0).y);
+			myMap.move(myName, new Location(myLoc.x, myLoc.y), Map.Type.GHOST);
+			return true;
+		}
 		return false;
 	}
 
@@ -59,6 +65,11 @@ public class Ghost{
 	}
 
 	public boolean attack() {
-		return false;
+		if(is_pacman_in_range()) {
+			return myMap.attack(myName)
+		} else {
+			return false;
+		}
+
 	}
 }
