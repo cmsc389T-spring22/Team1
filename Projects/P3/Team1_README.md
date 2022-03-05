@@ -3,6 +3,7 @@
 Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 
 ![alt text](https://raw.githubusercontent.com/cmsc389T-spring22/Team1/main/Projects/P3/IMG_7342.png?token=GHSAT0AAAAAABRCG5PXIUCJQWPMBVFTKTQKYRC435A)
+![alt text](https://github.com/cmsc389T-spring22/Team1/blob/main/Projects/P3/IMG_9921.png)
 
 ## How to run code from command line
 
