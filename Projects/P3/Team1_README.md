@@ -6,8 +6,10 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 ![alt text](https://github.com/cmsc389T-spring22/Team1/blob/main/Projects/P3/IMG_9921.png)
 
 ## How to run code from command line
-
-
+```bash
+javac -cp "src/" src/*.java
+java -cp "src/" StartMenu
+```
 
 ## Functions and Tests description
 
