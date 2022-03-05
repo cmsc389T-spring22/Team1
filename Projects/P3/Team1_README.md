@@ -18,6 +18,7 @@ java -cp "src/" StartMenu
 ### get_valid_moves()
 * **Description:** This method will utilize the current location and view around the Pacman. It will return all of the locations that contain a cookie or are empty. 
 
+* **TestPacmanValidMoves:** This method creates a Pacman at location 9,10 and tests that the method generates the correct valid moves.
 
 
 
@@ -49,6 +50,7 @@ java -cp "src/" StartMenu
 ### get_valid_moves()
 * **Description:** This method will utilize the current location and view around the Ghost. It will return all of the locations that contain a cookie or are empty. 
 
+* **TestGhostValidMoves:** This method creates a ghost at location 9,10 and tests that the method generates the correct valid moves.
 
 ### move()
 
@@ -77,6 +79,8 @@ java -cp "src/" StartMenu
 
 ### move(String name, Location loc, Type type)
 * **Description:** This method will update the Map and actually move the object associated with the name, location, and type to the new location. It will return true if the move worked successfully, and false otherwise.
+
+* **TestMapMove:** This method creates a Map object, and tests a move on a Ghost to a new location.
 
 ### getLoc(Location loc)
 * **Description:** This functions checks what is at the current location, loc. It returns Empty, Pacman, Cookie, Ghost, or Wall.
