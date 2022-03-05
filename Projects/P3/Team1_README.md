@@ -11,7 +11,7 @@ javac -cp "src/" src/*.java
 java -cp "src/" StartMenu
 ```
 
-## Functions and Tests description
+## Methods and Tests For Each Class Below
 
 ## PacMan class
 
