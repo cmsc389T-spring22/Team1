@@ -1,4 +1,7 @@
 import java.util.HashSet;
+
+
+
 import java.util.ArrayList;
 
 public class Ghost{
@@ -19,16 +22,16 @@ public class Ghost{
 		Location up = new Location(myLoc.x, myLoc.y - 1);
 		Location down = new Location(myLoc.x, myLoc.y + 1);
 
-		if(myMap.getLoc(right) == Type.EMPTY || myMap.getLoc(right) == Type.COOKIE) {
+		if(myMap.getLoc(right).contains(Map.Type.EMPTY) || myMap.getLoc(right).contains(Map.Type.COOKIE)) {
 			returner.add(right);
 		}
-		if(myMap.getLoc(left) == Type.EMPTY || myMap.getLoc(left) == Type.COOKIE) {
+		if(myMap.getLoc(left).contains(Map.Type.EMPTY) || myMap.getLoc(left).contains(Map.Type.COOKIE)) {
 			returner.add(left);
 		}
-		if(myMap.getLoc(up) == Type.EMPTY || myMap.getLoc(up) == Type.COOKIE) {
+		if(myMap.getLoc(up).contains(Map.Type.EMPTY) ||myMap.getLoc(up).contains(Map.Type.COOKIE)) {
 			returner.add(up);
 		}
-		if(myMap.getLoc(down) == Type.EMPTY || myMap.getLoc(down) == Type.COOKIE) {
+		if(myMap.getLoc(down).contains(Map.Type.EMPTY) ||myMap.getLoc(down).contains(Map.Type.COOKIE)) {
 			returner.add(down);
 		}
 		return returner;
@@ -84,7 +87,7 @@ public class Ghost{
 
 	public boolean attack() {
 		if(is_pacman_in_range()) {
-			return myMap.attack(myName)
+			return myMap.attack(myName);
 		} else {
 			return false;
 		}
