@@ -2,7 +2,7 @@
 
 Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 
-![PacMan Game Image]()
+![Projects/P3/IMG_7342.png]()
 
 ## How to run code from command line
 
