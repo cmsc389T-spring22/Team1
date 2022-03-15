@@ -9,6 +9,6 @@ public class TestMapEatCookie extends TestCase{
 		NoFrame frame = new NoFrame();
 		Map m = frame.getMap();
 		frame.addPacMan(new Location(4,6));
-		assertTrue(m.eatCookie("pacman") != null);
+		assertTrue(m.eatCookie("pacman") == null);
 	}
 }
