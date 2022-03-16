@@ -5,12 +5,13 @@ import java.util.HashSet;
 
 public class TestMapGetLoc extends TestCase {
 	
-	public void testMapGetLoc() throws FileNotFoundException {
-		NoFrame f = new NoFrame();
+	public void testMapGetLoc() throws FileNotFoundException{
+		NoFrame frame = new NoFrame(); 
+		PacMan pacman = frame.addPacMan(new Location(1,1));
+
 		HashSet<Map.Type> setOne = new HashSet<Map.Type>();
-		setOne.add(Map.Type.EMPTY);
-		setOne.add(Map.Type.WALL);
-		assertTrue(f.getMap().getLoc(new Location(3,3)) == setOne);
-		assertTrue(f.getMap().getLoc(new Location(3,2)) == setOne);
+		setOne.add(Map.Type.PACMAN);
+		setOne.add(Map.Type.COOKIE);
+		assertEquals(frame.getMap().getLoc(new Location(1,1)), setOne);
 	}
 }

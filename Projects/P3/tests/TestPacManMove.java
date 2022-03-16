@@ -14,8 +14,5 @@ public class TestPacManMove extends TestCase {
 		assertTrue(pac.move() == false);
 
 
-		NoFrame frame2 = new NoFrame();
-		PacMan pac2 = frame.addPacMan(new Location(9,11));
-		assertTrue(pac2.move() == true);
 	}
 }
