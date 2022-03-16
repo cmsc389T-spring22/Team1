@@ -13,9 +13,5 @@ public class TestPacManMove extends TestCase {
 		Ghost ghost4 = frame.addGhost(new Location(9,10), "g4", Color.black);
 		assertTrue(pac.move() == false);
 
-
-		NoFrame frame2 = new NoFrame();
-		PacMan pac2 = frame.addPacMan(new Location(9,11));
-		assertTrue(pac2.move() == true);
 	}
 }
