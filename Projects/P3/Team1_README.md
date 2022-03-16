@@ -2,19 +2,23 @@
 
 Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 
-![PacMan Game Image]()
+![](https://raw.githubusercontent.com/cmsc389T-spring22/Team1/main/Projects/P3/IMG_7342.png)
+![](https://github.com/cmsc389T-spring22/Team1/blob/main/Projects/P3/IMG_9921.png)
 
 ## How to run code from command line
+```bash
+javac -cp "src/" src/*.java
+java -cp "src/" StartMenu
+```
 
-
-
-## Functions and Tests description
+## Methods and Tests For Each Class Below
 
 ## PacMan class
 
 ### get_valid_moves()
 * **Description:** This method will utilize the current location and view around the Pacman. It will return all of the locations that contain a cookie or are empty. 
 
+* **TestPacmanValidMoves:** This method creates a Pacman at location 9,10 and tests that the method generates the correct valid moves.
 
 
 
@@ -46,6 +50,7 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 ### get_valid_moves()
 * **Description:** This method will utilize the current location and view around the Ghost. It will return all of the locations that contain a cookie or are empty. 
 
+* **TestGhostValidMoves:** This method creates a ghost at location 9,10 and tests that the method generates the correct valid moves.
 
 ### move()
 
@@ -74,6 +79,8 @@ Ankit Adhikari, Logan O'Connell, Rushil Savalia, Vrunda Jasani
 
 ### move(String name, Location loc, Type type)
 * **Description:** This method will update the Map and actually move the object associated with the name, location, and type to the new location. It will return true if the move worked successfully, and false otherwise.
+
+* **TestMapMove:** This method creates a Map object, and tests a move on a Ghost to a new location.
 
 ### getLoc(Location loc)
 * **Description:** This functions checks what is at the current location, loc. It returns Empty, Pacman, Cookie, Ghost, or Wall.
