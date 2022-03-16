@@ -1,16 +1,20 @@
 import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
-
+import java.util.ArrayList;
 
 public class TestPacManValidMoves extends TestCase {
 
-	public void testPacManValidMoves() throws FileNotFoundException{
+	public void testPacManValidMoves() throws FileNotFoundException {
 		NoFrame frame = new NoFrame();
-		Pacman gh = frame.addPacman(new Location(9,11));
-		Map map = frame.getMap();
-		ArrayList<Location> s = new ArrayList();
-		assertTrue(gh.get_valid_moves().contains(new Location(9,12)));
-		assertTrue(gh.get_valid_moves().contains(new Location(10,11)));
+
+		PacMan pacman = frame.addPacMan(new Location(1, 1));
+		frame.startGame();
+
+		ArrayList<Location> moves = pacman.get_valid_moves();
+		assertEquals(2, moves.size());
+
+		assertEquals(new Location(2, 1), moves.get(0));
+		assertEquals(new Location(1, 2), moves.get(1));
 	}
 }

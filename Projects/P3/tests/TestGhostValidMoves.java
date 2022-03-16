@@ -2,14 +2,17 @@
 import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
+import java.util.ArrayList;
 public class TestGhostValidMoves extends TestCase {
 
 	public void testGhostValidMoves() throws FileNotFoundException{
 		NoFrame frame = new NoFrame();
-		Ghost gh = frame.addGhost(new Location(9,11), "Hi", Color.BLACK);
+		Ghost gh = frame.addGhost(new Location(1,1), "Hi", Color.BLACK);
 		Map map = frame.getMap();
-		ArrayList<Location> s = new ArrayList();
-		assertTrue(gh.get_valid_moves().contains(new Location(9,12)));
-		assertTrue(gh.get_valid_moves().contains(new Location(10,11)));
+		ArrayList<Location> moves = gh.get_valid_moves();
+		assertEquals(2, moves.size());
+
+		assertEquals(new Location(2, 1), moves.get(0));
+		assertEquals(new Location(1, 2), moves.get(1));
 	}
 }

@@ -55,22 +55,17 @@ public class Map{
 	public boolean move(String name, Location loc, Type type) {
 		//update locations, components, and field
 		//use the setLocation method for the component to move it to the new location
-		if(!getLoc(loc).contains(Type.WALL)) {
-			if (type == Type.PACMAN) {
-				locations.put(name, loc);
-				components.get(name).setLocation(loc.x, loc.y);
-				field.get(loc).add(type);
-				return true;
-			}
-			if (type == Type.GHOST) {
-				locations.put(name, loc);
-				components.get(name).setLocation(loc.x, loc.y);
-				field.get(loc).add(type);
-				return true;
-			}
-		}
+		Location old = locations.get(name);
 
-		return false;
+		if (!locations.containsKey(name) || !field.containsKey(loc) || !components.containsKey(name)) {
+			return false;
+		}
+		field.get(old).remove(type);
+		field.get(loc).add(type);
+
+		components.get(name).setLocation(loc.x, loc.y);
+		locations.replace(name, loc);
+		return true;
 	}
 
 	public HashSet<Type> getLoc(Location loc) {
