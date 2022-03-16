@@ -69,8 +69,13 @@ public class Map{
 	}
 
 	public HashSet<Type> getLoc(Location loc) {
-		//wallSet and emptySet will help you write this method
-		return field.get(loc);
+		// wallSet and emptySet will help you write this method
+		if (field.containsKey(loc) == false) {
+			return wallSet;
+		} else {
+			return field.get(loc);
+		}
+		
 	}
 
 	public boolean attack(String Name) {
@@ -108,7 +113,7 @@ public class Map{
 			successfulAttack = true;
 		}
 
-		gameOver = true;
+		gameOver = (successfulAttack == true);
 		return successfulAttack;
 	}
 
