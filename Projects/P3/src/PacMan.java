@@ -34,7 +34,7 @@ public class PacMan{
 		if(myMap.getLoc(down).contains(Map.Type.EMPTY) ||myMap.getLoc(down).contains(Map.Type.COOKIE)) {
 			returner.add(down);
 		}
-		return returner;
+		return null;
 
 	}
 
