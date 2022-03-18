@@ -71,9 +71,9 @@ public class Map{
 	public HashSet<Type> getLoc(Location loc) {
 		// wallSet and emptySet will help you write this method
 		if (field.containsKey(loc) == false) {
-			return wallSet;
-		} else {
 			return field.get(loc);
+		} else {
+			return wallSet;
 		}
 		
 	}
