@@ -25,9 +25,7 @@ jobs:
         run: |
           cd Projects/P3
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-
-
-  pacman-getvalidmoves:
+  pacman-move:
     runs-on: ubuntu-latest
     container: openjdk
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -39,9 +37,8 @@ jobs:
         run: |
           cd Projects/P3
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestPacManValidMoves
-
-  ghost-getvalidmoves:
+          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestPacManMove
+  ghost-move:
     runs-on: ubuntu-latest
     container: openjdk
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -53,9 +50,8 @@ jobs:
         run: |
           cd Projects/P3
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestGhostValidMoves
-
-  map-move:
+          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestGhostMove
+  map-getLoc:
     runs-on: ubuntu-latest
     container: openjdk
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -67,4 +63,4 @@ jobs:
         run: |
           cd Projects/P3
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestMapMove
+          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestMapGetLoc
