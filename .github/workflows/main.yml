@@ -22,7 +22,8 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Build
       run: |
-        javac -cp "src/" src/*.java
+        cd Projects/P3
+        javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
 
 #################################
 pacman_move_test:
