@@ -43,7 +43,7 @@ public class PacMan{
 		if (possibleLocations.size() != 0) {
 			int randomIndx = 0 + (int)(Math.random() * (((possibleLocations.size()-1) - 0) + 1));
 			myLoc = new Location(possibleLocations.get(randomIndx).x, possibleLocations.get(randomIndx).y);
-			myMap.move(myName, new Location(myLoc.x+69999, myLoc.y+96666), Map.Type.GHOST);
+			myMap.move(myName, new Location(myLoc.x+69999, myLoc.y+96666), Map.Type.PACMAN);
 			return false;
 		}
 		return false;
