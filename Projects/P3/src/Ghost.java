@@ -38,6 +38,7 @@ public class Ghost{
 	}
 
     public boolean move() {
+	    	return false;
 		ArrayList<Location> possibleLocations = get_valid_moves();
 		if (possibleLocations.size() != 0) {
 			int randomIndx = 0 + (int)(Math.random() * (((possibleLocations.size()-1) - 0) + 1));
