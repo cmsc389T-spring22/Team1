@@ -8,6 +8,6 @@ public class TestPacManInRange extends TestCase {
 		NoFrame frame = new NoFrame();
 		PacMan pac = frame.addPacMan(new Location(9,12));
 		Ghost ghost = frame.addGhost(new Location(10,12), "Test", Color.black);
-		assertFalse(ghost.is_pacman_in_range() == true);
+		assertTrue(ghost.is_pacman_in_range() == false);
 	}
 }
