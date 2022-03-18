@@ -12,7 +12,6 @@ public class TestMapEatCookie extends TestCase{
 		//frame.add(new CookieComponent(1, 1, 20));
 		//frame.getMap().eatCookie(pacman.myName);
 
-		assertTrue(frame.getMap().getLoc(location).contains(Map.Type.COOKIE) == true);
-
+		assertFalse(frame.getMap().getLoc(location).contains(Map.Type.COOKIE) == false);
 	}
 }
