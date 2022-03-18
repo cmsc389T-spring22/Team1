@@ -7,7 +7,7 @@ on: [push, pull_request, workflow_dispatch]
 
 defaults:
   run:
-    working-directory: ./Projects/P3/
+    working-directory: ~/Projects/P3/
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -34,7 +34,6 @@ pacman_move_test:
     - uses: actions/checkout@v2
     # Runs a single command using the runners shell      
     - name: Run pacman_move test
-      working-directory: ./Projects/P3
       run: |
         javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestPacManMove.java
         java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestPacManMove
@@ -49,7 +48,6 @@ ghost_move_test:
     - uses: actions/checkout@v2
     # Runs a single command using the runners shell      
     - name: Run ghost_move test
-      working-directory: ./Projects/P3
       run: |
         javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestGhostMove.java
         java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestGhostMove
@@ -64,7 +62,6 @@ map_getloc_test:
     - uses: actions/checkout@v2
     # Runs a single command using the runners shell      
     - name: Run map_getloc test
-      working-directory: ./Projects/P3
       run: |
         javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestMapGetLoc.java
         java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestMapGetLoc
