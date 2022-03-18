@@ -8,6 +8,6 @@ public class TestMapAttack extends TestCase {
 		NoFrame frame = new NoFrame();
 		PacMan pac = frame.addPacMan(new Location(9,12));
 		Ghost ghost = frame.addGhost(new Location(10,12), "Test", Color.black);
-		assertTrue(frame.getMap().attack("Test") == true);
+		assertFalse(frame.getMap().attack("Test") == true);
 	}
 }
