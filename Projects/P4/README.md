@@ -39,6 +39,7 @@ The instructions below call for branching a feature-item for each member rather 
 
 **Only one person** from each team needs to take the following steps:
 
+
 1. Create 2 Feature branches: FTR-actions, FTR-sabotage (done)
 2. Create a feature-item actions-setup for the main.yaml file
 3. Add a main.yml file to your feature-item that uses the openjdk image and compiles all of your files
