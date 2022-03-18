@@ -23,3 +23,48 @@ jobs:
       - name: Build
         run: |
           javac -cp "src/" src/*.java
+
+#################################
+pacman_move_test:
+    runs-on: ubuntu-latest
+    container: openjdk
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Runs a single command using the runners shell      
+      - name: Run pacman_move test
+        working-directory: ./Projects/P3
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestPacManMove.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestPacManMove
+
+
+ghost_move_test:
+    runs-on: ubuntu-latest
+    container: openjdk
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Runs a single command using the runners shell      
+      - name: Run ghost_move test
+        working-directory: ./Projects/P3
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestGhostMove.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestGhostMove
+
+
+map_getloc_test:
+    runs-on: ubuntu-latest
+    container: openjdk
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Runs a single command using the runners shell      
+      - name: Run map_getloc test
+        working-directory: ./Projects/P3
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestMapGetLoc.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestMapGetLoc
