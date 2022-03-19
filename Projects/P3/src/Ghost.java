@@ -34,7 +34,7 @@ public class Ghost{
 		if(myMap.getLoc(down).contains(Map.Type.EMPTY) ||myMap.getLoc(down).contains(Map.Type.COOKIE)) {
 			returner.add(down);
 		}
-		return null;
+		return returner;
 	}
 
     public boolean move() {
