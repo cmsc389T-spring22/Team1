@@ -43,10 +43,10 @@ public class PacMan{
 		if (possibleLocations.size() != 0) {
 			int randomIndx = 0 + (int)(Math.random() * (((possibleLocations.size()-1) - 0) + 1));
 			myLoc = new Location(possibleLocations.get(randomIndx).x, possibleLocations.get(randomIndx).y);
-			myMap.move(myName, new Location(myLoc.x+69999, myLoc.y+96666), Map.Type.PACMAN);
+			myMap.move(myName, new Location(myLoc.x, myLoc.y), Map.Type.PACMAN);
 			return true;
 		}
-		return true;
+		return false;
 	}
 
 	public boolean is_ghost_in_range() {
