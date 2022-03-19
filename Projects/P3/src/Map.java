@@ -65,15 +65,15 @@ public class Map{
 
 		components.get(name).setLocation(loc.x, loc.y);
 		locations.replace(name, loc);
-		return false;
+		return true;
 	}
 
 	public HashSet<Type> getLoc(Location loc) {
 		// wallSet and emptySet will help you write this method
 		if (field.containsKey(loc) == false) {
-			return field.get(loc);
-		} else {
 			return wallSet;
+		} else {
+			return field.get(loc);
 		}
 		
 	}
