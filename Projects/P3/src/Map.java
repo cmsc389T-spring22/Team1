@@ -79,42 +79,17 @@ public class Map{
 	}
 
 	public boolean attack(String Name) {
-		boolean successfulAttack = false;
-
-		if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x + 1, locations.get("pacman").y))) {
-			successfulAttack = true;
+		Location loc = locations.get(Name);
+		if(loc == null) {
+			return false;
 		}
 
-		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x - 1, locations.get("pacman").y))) {
-			successfulAttack = true;
+		if(field.get(loc.shift(-1, 0)).contains(Type.PACMAN) || field.get(loc.shift(0, -1)).contains(Type.PACMAN) ||
+				field.get(loc.shift(1, 0)).contains(Type.PACMAN) || field.get(loc.shift(0, 1)).contains(Type.PACMAN)) {
+			gameOver = false;
+			return false;
 		}
-
-		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x, locations.get("pacman").y + 1))) {
-			successfulAttack = true;
-		}
-
-		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x, locations.get("pacman").y - 1))) {
-			successfulAttack = true;
-		}
-
-		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x + 1, locations.get("pacman").y + 1))) {
-			successfulAttack = true;
-		}
-
-		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x - 1, locations.get("pacman").y - 1))) {
-			successfulAttack = true;
-		}
-
-		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x + 1, locations.get("pacman").y - 1))) {
-			successfulAttack = true;
-		}
-
-		else if (locations.get(Name) != null && locations.get(Name).equals(new Location(locations.get("pacman").x - 1, locations.get("pacman").y + 1))) {
-			successfulAttack = true;
-		}
-
-		gameOver = (successfulAttack == true);
-		return successfulAttack;
+		return true;
 	}
 
 	public JComponent eatCookie(String name) {
