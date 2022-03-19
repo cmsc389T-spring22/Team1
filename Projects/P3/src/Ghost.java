@@ -34,7 +34,7 @@ public class Ghost{
 		if(myMap.getLoc(down).contains(Map.Type.EMPTY) ||myMap.getLoc(down).contains(Map.Type.COOKIE)) {
 			returner.add(down);
 		}
-		return null;
+		return returner;
 	}
 
     public boolean move() {
@@ -42,8 +42,8 @@ public class Ghost{
 		if (possibleLocations.size() != 0) {
 			int randomIndx = 0 + (int)(Math.random() * (((possibleLocations.size()-1) - 0) + 1));
 			myLoc = new Location(possibleLocations.get(randomIndx).x, possibleLocations.get(randomIndx).y);
-			myMap.move(myName, new Location(myLoc.x+69999, myLoc.y+69999), Map.Type.GHOST);
-			return false;
+			myMap.move(myName, new Location(myLoc.x, myLoc.y), Map.Type.GHOST);
+			return true;
 		}
 		return false;
 	}
